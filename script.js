@@ -962,19 +962,40 @@ function animatePlanetSystem() {
 // ---- RANDOM MUSIC NÈ ----
 // ===========================
 
+// let galaxyAudio = null;
+
+// function preloadGalaxyAudio() {
+//   const audioSources = ["./sound/useSound.mp3"];
+
+//   const randomIndex = Math.floor(Math.random() * audioSources.length);
+//   const selectedSrc = audioSources[randomIndex];
+
+//   galaxyAudio = new Audio(selectedSrc);
+//   galaxyAudio.loop = true;
+//   galaxyAudio.volume = 1.0;
+
+//   // Preload không autoplay
+//   galaxyAudio.preload = "auto";
+// }
+
+// function playGalaxyAudio() {
+//   if (galaxyAudio) {
+//     galaxyAudio.play().catch((err) => {
+//       console.warn("Audio play blocked or delayed:", err);
+//     });
+//   }
+// }
+// preloadGalaxyAudio();
 let galaxyAudio = null;
 
 function preloadGalaxyAudio() {
   const audioSources = ["./sound/useSound.mp3"];
-
   const randomIndex = Math.floor(Math.random() * audioSources.length);
   const selectedSrc = audioSources[randomIndex];
 
   galaxyAudio = new Audio(selectedSrc);
   galaxyAudio.loop = true;
   galaxyAudio.volume = 1.0;
-
-  // Preload không autoplay
   galaxyAudio.preload = "auto";
 }
 
@@ -985,7 +1006,13 @@ function playGalaxyAudio() {
     });
   }
 }
+
 preloadGalaxyAudio();
+
+// Kích hoạt phát nhạc sau tương tác người dùng
+document.addEventListener("click", () => {
+  playGalaxyAudio();
+});
 
 // ---- VÒNG LẶP ANIMATE ----
 let fadeOpacity = 0.1;
