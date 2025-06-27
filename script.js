@@ -728,7 +728,7 @@ scene.add(planet);
 
 // ---- TẠO CÁC VÒNG CHỮ QUAY QUANH HÀNH TINH ----
 const ringTexts = [
-  "Việt Nam",
+  "teadev2002",
   "Anh Hoang",
   "The Anh",
   "24/01/2002",
